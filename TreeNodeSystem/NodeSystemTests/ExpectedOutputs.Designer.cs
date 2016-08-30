@@ -22,14 +22,14 @@ namespace NodeSystemTests {
     [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Resources.Tools.StronglyTypedResourceBuilder", "4.0.0.0")]
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
     [global::System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
-    internal class TestOracle {
+    internal class ExpectedOutputs {
         
         private static global::System.Resources.ResourceManager resourceMan;
         
         private static global::System.Globalization.CultureInfo resourceCulture;
         
         [global::System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1811:AvoidUncalledPrivateCode")]
-        internal TestOracle() {
+        internal ExpectedOutputs() {
         }
         
         /// <summary>
@@ -39,7 +39,7 @@ namespace NodeSystemTests {
         internal static global::System.Resources.ResourceManager ResourceManager {
             get {
                 if (object.ReferenceEquals(resourceMan, null)) {
-                    global::System.Resources.ResourceManager temp = new global::System.Resources.ResourceManager("NodeSystemTests.TestOracle", typeof(TestOracle).Assembly);
+                    global::System.Resources.ResourceManager temp = new global::System.Resources.ResourceManager("NodeSystemTests.ExpectedOutputs", typeof(ExpectedOutputs).Assembly);
                     resourceMan = temp;
                 }
                 return resourceMan;
@@ -72,9 +72,9 @@ namespace NodeSystemTests {
         /////         new SingleChildNode(&quot;child2&quot;,
         /////             null))).
         /// </summary>
-        internal static string IoCTests_TestData {
+        internal static string test1 {
             get {
-                return ResourceManager.GetString("IoCTests_TestData", resourceCulture);
+                return ResourceManager.GetString("test1", resourceCulture);
             }
         }
         
@@ -87,9 +87,9 @@ namespace NodeSystemTests {
         /////             new NoChildrenNode(&quot;child112&quot;)),
         /////         new NoChildrenNode(&quot;child2&quot;))).
         /// </summary>
-        internal static string IoCTests_TestData_NoTransformed {
+        internal static string test1_Transformed {
             get {
-                return ResourceManager.GetString("IoCTests_TestData_NoTransformed", resourceCulture);
+                return ResourceManager.GetString("test1_Transformed", resourceCulture);
             }
         }
     }

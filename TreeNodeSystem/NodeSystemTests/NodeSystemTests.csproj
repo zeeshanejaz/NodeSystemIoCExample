@@ -66,13 +66,15 @@
     </Otherwise>
   </Choose>
   <ItemGroup>
-    <Compile Include="IoCTests.cs" />
+    <Compile Include="DynamicIoCTests.cs" />
+    <Compile Include="SimpleIoCTests.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="TestOracle.Designer.cs">
+    <Compile Include="ExpectedOutputs.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>TestOracle.resx</DependentUpon>
+      <DependentUpon>ExpectedOutputs.resx</DependentUpon>
     </Compile>
+    <Compile Include="TestOracle.cs" />
     <Compile Include="UnitySetup.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -82,9 +84,9 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="TestOracle.resx">
+    <EmbeddedResource Include="ExpectedOutputs.resx">
       <Generator>ResXFileCodeGenerator</Generator>
-      <LastGenOutput>TestOracle.Designer.cs</LastGenOutput>
+      <LastGenOutput>ExpectedOutputs.Designer.cs</LastGenOutput>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>

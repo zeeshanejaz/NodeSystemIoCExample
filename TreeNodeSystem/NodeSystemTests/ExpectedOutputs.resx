@@ -117,7 +117,7 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="IoCTests_TestData" xml:space="preserve">
+  <data name="test1" xml:space="preserve">
     <value>// result is:
 // new SingleChildNode("root",
 //     new TwoChildrenNode("child1",
@@ -129,7 +129,7 @@
 //         new SingleChildNode("child2",
 //             null)))</value>
   </data>
-  <data name="IoCTests_TestData_NoTransformed" xml:space="preserve">
+  <data name="test1_Transformed" xml:space="preserve">
     <value>// result is:
 // new SingleChildNode("root",
 //     new TwoChildrenNode("child1",
