@@ -40,7 +40,20 @@ namespace NodeSystemTests
                     new ManyChildrenNode("child2",
                         new ManyChildrenNode("leaf2"))));
 
-            TestCases.Add(test1, new Tuple<string, string>(ExpectedOutputs.test1, ExpectedOutputs.test1_Transformed));
+            TestCases.Add(test1,
+                new Tuple<string, string>(
+                    ExpectedOutputs.test1,
+                    ExpectedOutputs.test1_Transformed));
+
+            TestCases.Add(test2,
+                new Tuple<string, string>(
+                    ExpectedOutputs.test2,
+                    ExpectedOutputs.test2_Transformed));
+
+            TestCases.Add(test3,
+                new Tuple<string, string>(
+                    ExpectedOutputs.test3,
+                    ExpectedOutputs.test3_Transformed));
         }
 
     }

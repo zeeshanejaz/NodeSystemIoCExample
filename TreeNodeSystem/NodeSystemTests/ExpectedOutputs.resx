@@ -118,24 +118,50 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <data name="test1" xml:space="preserve">
-    <value>// result is:
-// new SingleChildNode("root",
-//     new TwoChildrenNode("child1",
-//         new ManyChildrenNode("child11",
-//             new NoChildrenNode("leaf1"),
-//             null,
-//             new SingleChildNode("child112",
-//                 null)),
-//         new SingleChildNode("child2",
-//             null)))</value>
+    <value>new SingleChildNode("root",
+    new TwoChildrenNode("child1",
+        new ManyChildrenNode("child11",
+            new NoChildrenNode("leaf1"),
+            null,
+            new SingleChildNode("child112",
+                null)),
+        new SingleChildNode("child2",
+            null)))</value>
   </data>
   <data name="test1_Transformed" xml:space="preserve">
-    <value>// result is:
-// new SingleChildNode("root",
-//     new TwoChildrenNode("child1",
-//         new TwoChildrenNode("child11",
-//             new NoChildrenNode("leaf1"),
-//             new NoChildrenNode("child112")),
-//         new NoChildrenNode("child2")))</value>
+    <value>new SingleChildNode("root",
+    new TwoChildrenNode("child1",
+        new TwoChildrenNode("child11",
+            new NoChildrenNode("leaf1"),
+            new NoChildrenNode("child112")),
+        new NoChildrenNode("child2")))</value>
+  </data>
+  <data name="test2" xml:space="preserve">
+    <value>new SingleChildNode("root",
+    new TwoChildrenNode("child1",
+        new NoChildrenNode("leaf1"),
+        new SingleChildNode("child2",
+            new NoChildrenNode("leaf2"))))</value>
+  </data>
+  <data name="test2_Transformed" xml:space="preserve">
+    <value>new SingleChildNode("root",
+    new TwoChildrenNode("child1",
+        new NoChildrenNode("leaf1"),
+        new SingleChildNode("child2",
+            new NoChildrenNode("leaf2"))))</value>
+  </data>
+  <data name="test3" xml:space="preserve">
+    <value>new ManyChildrenNode("root",
+    new ManyChildrenNode("child1",
+        new ManyChildrenNode("leaf1"),
+        new ManyChildrenNode("child2",
+            new ManyChildrenNode("leaf2"))))</value>
+  </data>
+  <data name="test3_Transformed" xml:space="preserve">
+    <value>new SingleChildNode("root",
+    new TwoChildrenNode("child1",
+        new NoChildrenNode("leaf1"),
+        new SingleChildNode("child2",
+            new NoChildrenNode("leaf2"))))</value>
   </data>
 </root>

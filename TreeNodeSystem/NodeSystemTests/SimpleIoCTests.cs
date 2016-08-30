@@ -30,28 +30,34 @@ namespace NodeSystemTests
                     new SingleChildNode("child2",
                         new NoChildrenNode("leaf2"))));
             var result = implementation.Describe(testData);
+            Assert.AreEqual(result, ExpectedOutputs.test2);
         }
 
         [TestMethod]
         public void SimpleTransformerTest()
         {
+            INodeDescriber descImplementation = container.Resolve<NodeDescriber>();
             INodeTransformer implementation = container.Resolve<NodeTransformer>();
             var testData = new ManyChildrenNode("root",
                 new ManyChildrenNode("child1",
                     new ManyChildrenNode("leaf1"),
                     new ManyChildrenNode("child2",
                         new ManyChildrenNode("leaf2"))));
-            var result = implementation.Transform(testData);
+            var trasnformed = implementation.Transform(testData);
+            var result = descImplementation.Describe(trasnformed);
+            Assert.AreEqual(result, ExpectedOutputs.test3_Transformed);
         }
 
         [TestMethod]
         public void SimpleWriterTest()
         {
             INodeWriter implementation = container.Resolve<NodeWriter>();
-            var filePath = "output.txt";
+            var filePath = string.Format("tmp_{0}.txt", System.Guid.NewGuid());
             var testData = new NoChildrenNode("root");
             implementation.WriteToFileAsync(testData, filePath).Wait();
             var result = File.ReadAllText(filePath);
+            Assert.AreEqual(result, "new NoChildrenNode(\"root\")");
+            File.Delete(filePath);
         }
     }
 }

@@ -32,7 +32,7 @@ namespace TreeNodeSystem.System
 
         public void AppendIndentedString(string toPrepare)
         {
-            builder.AppendFormat("// {0}{1}", indent, toPrepare);
+            builder.AppendFormat("{0}{1}", indent, toPrepare);
         }
 
         public void AppendRawString(string toAppend)

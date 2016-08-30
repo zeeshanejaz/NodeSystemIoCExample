@@ -61,16 +61,15 @@ namespace NodeSystemTests {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to // result is:
-        ///// new SingleChildNode(&quot;root&quot;,
-        /////     new TwoChildrenNode(&quot;child1&quot;,
-        /////         new ManyChildrenNode(&quot;child11&quot;,
-        /////             new NoChildrenNode(&quot;leaf1&quot;),
-        /////             null,
-        /////             new SingleChildNode(&quot;child112&quot;,
-        /////                 null)),
-        /////         new SingleChildNode(&quot;child2&quot;,
-        /////             null))).
+        ///   Looks up a localized string similar to new SingleChildNode(&quot;root&quot;,
+        ///    new TwoChildrenNode(&quot;child1&quot;,
+        ///        new ManyChildrenNode(&quot;child11&quot;,
+        ///            new NoChildrenNode(&quot;leaf1&quot;),
+        ///            null,
+        ///            new SingleChildNode(&quot;child112&quot;,
+        ///                null)),
+        ///        new SingleChildNode(&quot;child2&quot;,
+        ///            null))).
         /// </summary>
         internal static string test1 {
             get {
@@ -79,17 +78,68 @@ namespace NodeSystemTests {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to // result is:
-        ///// new SingleChildNode(&quot;root&quot;,
-        /////     new TwoChildrenNode(&quot;child1&quot;,
-        /////         new TwoChildrenNode(&quot;child11&quot;,
-        /////             new NoChildrenNode(&quot;leaf1&quot;),
-        /////             new NoChildrenNode(&quot;child112&quot;)),
-        /////         new NoChildrenNode(&quot;child2&quot;))).
+        ///   Looks up a localized string similar to new SingleChildNode(&quot;root&quot;,
+        ///    new TwoChildrenNode(&quot;child1&quot;,
+        ///        new TwoChildrenNode(&quot;child11&quot;,
+        ///            new NoChildrenNode(&quot;leaf1&quot;),
+        ///            new NoChildrenNode(&quot;child112&quot;)),
+        ///        new NoChildrenNode(&quot;child2&quot;))).
         /// </summary>
         internal static string test1_Transformed {
             get {
                 return ResourceManager.GetString("test1_Transformed", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to new SingleChildNode(&quot;root&quot;,
+        ///    new TwoChildrenNode(&quot;child1&quot;,
+        ///        new NoChildrenNode(&quot;leaf1&quot;),
+        ///        new SingleChildNode(&quot;child2&quot;,
+        ///            new NoChildrenNode(&quot;leaf2&quot;)))).
+        /// </summary>
+        internal static string test2 {
+            get {
+                return ResourceManager.GetString("test2", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to new SingleChildNode(&quot;root&quot;,
+        ///    new TwoChildrenNode(&quot;child1&quot;,
+        ///        new NoChildrenNode(&quot;leaf1&quot;),
+        ///        new SingleChildNode(&quot;child2&quot;,
+        ///            new NoChildrenNode(&quot;leaf2&quot;)))).
+        /// </summary>
+        internal static string test2_Transformed {
+            get {
+                return ResourceManager.GetString("test2_Transformed", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to new ManyChildrenNode(&quot;root&quot;,
+        ///    new ManyChildrenNode(&quot;child1&quot;,
+        ///        new ManyChildrenNode(&quot;leaf1&quot;),
+        ///        new ManyChildrenNode(&quot;child2&quot;,
+        ///            new ManyChildrenNode(&quot;leaf2&quot;)))).
+        /// </summary>
+        internal static string test3 {
+            get {
+                return ResourceManager.GetString("test3", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to new SingleChildNode(&quot;root&quot;,
+        ///    new TwoChildrenNode(&quot;child1&quot;,
+        ///        new NoChildrenNode(&quot;leaf1&quot;),
+        ///        new SingleChildNode(&quot;child2&quot;,
+        ///            new NoChildrenNode(&quot;leaf2&quot;)))).
+        /// </summary>
+        internal static string test3_Transformed {
+            get {
+                return ResourceManager.GetString("test3_Transformed", resourceCulture);
             }
         }
     }

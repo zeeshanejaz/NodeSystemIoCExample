@@ -24,7 +24,6 @@ namespace TreeNodeSystem.NodeUtilities.Impl
         /// <returns>String respresentation of the given node</returns>
         public string Describe(Node node)
         {
-            writer.AppendIndentedString("result is:\r\n");
             recursiveDescribe(node, new HashSet<Node>());
             string result = writer.ToString();
             writer.Clear();
@@ -58,22 +57,22 @@ namespace TreeNodeSystem.NodeUtilities.Impl
             string output = string.Format("new {0}(\"{1}\"", typeName, node.Name?? "Unknown");
             writer.AppendIndentedString(output);
 
-            if (!(node is NoChildrenNode))
-            {
-                // print separator between name and the next argument
-                writer.AppendRawString(",\r\n");
-            }
-
             //next level of indentation
             writer.PushIndent();
 
             if (node is SingleChildNode)
             {
+                // print separator between name and the next argument
+                writer.AppendRawString(",\r\n");
+
                 var acceptedNode = node as SingleChildNode;
                 recursiveDescribe(acceptedNode.Child, processed);
             }
             else if (node is TwoChildrenNode)
             {
+                // print separator between name and the next argument
+                writer.AppendRawString(",\r\n");
+
                 var acceptedNode = node as TwoChildrenNode;
                 recursiveDescribe(acceptedNode.FirstChild, processed);
 
@@ -85,14 +84,20 @@ namespace TreeNodeSystem.NodeUtilities.Impl
             else if (node is ManyChildrenNode)
             {
                 var acceptedNode = node as ManyChildrenNode;
-                //loop over all children
-                foreach (var childNode in acceptedNode.Children)
+                if ((acceptedNode.Children != null) && (acceptedNode.Children.Count() > 0))
                 {
-                    recursiveDescribe(childNode, processed);
+                    // print separator between name and the next argument
+                    writer.AppendRawString(",\r\n");
 
-                    // print separator between this and the next argument
-                    if (childNode != acceptedNode.Children.Last())
-                        writer.AppendRawString(",\r\n");
+                    //loop over all children
+                    foreach (var childNode in acceptedNode.Children)
+                    {
+                        recursiveDescribe(childNode, processed);
+
+                        // print separator between this and the next argument
+                        if (childNode != acceptedNode.Children.Last())
+                            writer.AppendRawString(",\r\n");
+                    }
                 }
             }
 
